@@ -15,14 +15,13 @@ class DisplayProfile extends StatelessWidget {
               Center(
                 child: InkWell(
                     onTap: () {
-
                     },
                     child: Text("TOKEN")),
               ),
               SizedBox(height: 30),
               Expanded(
-                child: FutureBuilder(
-                    future: displayProfileController.displayProfiles(),
+                child: StreamBuilder(
+                    stream: displayProfileController.displayProfileStream(),
                     builder: (context,snapshot){
                       print("sjjs");
                       print(snapshot.data);
